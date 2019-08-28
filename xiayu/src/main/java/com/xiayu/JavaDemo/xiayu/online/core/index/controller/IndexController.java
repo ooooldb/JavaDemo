@@ -16,4 +16,8 @@ public class IndexController {
     public String index() {
         return "xiayu's index";
     }
+    @GetMapping("index2")
+    public String index2() {
+        return "xiayu's index2";
+    }
 }
