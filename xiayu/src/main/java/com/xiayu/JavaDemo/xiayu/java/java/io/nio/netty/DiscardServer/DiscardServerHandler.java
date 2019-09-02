@@ -1,4 +1,4 @@
-package com.xiayu.JavaDemo.xiayu.java.java.io.nio.netty;
+package com.xiayu.JavaDemo.xiayu.java.java.io.nio.netty.DiscardServer;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
