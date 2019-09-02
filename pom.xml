@@ -26,6 +26,7 @@
         <commons-lang.version>2.6</commons-lang.version>
         <quartz.version>2.2.3</quartz.version>
         <netty.version>4.1.39.Final</netty.version>
+        <shiro.version>1.4.0</shiro.version>
     </properties>
 
     <dependencies>
@@ -57,12 +58,23 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <!--shiro-->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
                 <version>${commons-lang.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
