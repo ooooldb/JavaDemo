@@ -20,7 +20,6 @@ public class DiscardServer {
     }
 
     public void run() {
-        //处理I/O操作的多线程事件循环
         NioEventLoopGroup bossGroup = new NioEventLoopGroup();
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -28,7 +27,7 @@ public class DiscardServer {
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
-                protected void initChannel(SocketChannel sc) throws Exception {
+                public void initChannel(SocketChannel sc) throws Exception {
                     sc.pipeline().addLast(new DiscardServerHandler());
                 }
             }).option(ChannelOption.SO_BACKLOG, 128)
