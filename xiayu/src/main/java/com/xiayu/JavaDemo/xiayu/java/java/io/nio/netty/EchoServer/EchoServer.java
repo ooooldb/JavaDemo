@@ -11,6 +11,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import java.net.InetSocketAddress;
 
 /**
+ * 所有的Netty服务器都需要有以下两部分.
+ *  1.至少一个ChannelHandler-该组件实现了
+ *    服务器对从客户端接受的数据的处理,即它的业务逻辑
+ *  2.引导-这是配置服务器的启动代码.至少,它会将服务器绑定到它要监听连接请求的端口上
  * @author: starc
  * @date: 2019/9/2
  */
@@ -36,13 +40,13 @@ public class EchoServer {
                     //5.添加一个EchoServerHandler到子Channel的ChannelPileLine
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        protected void initChannel(SocketChannel ch) {
+                        public void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast(serverHandler);
                         }
                     });
             //6.异步地绑定服务器；调用sync()方法阻塞等待直到绑定完成
             ChannelFuture future = bootstrap.bind().sync();
-            //7.获取Channel的CloseFutrue，并且阻塞当前线程直到它完成
+            //7.获取Channel的CloseFuture，并且阻塞当前线程直到它完成
             future.channel().closeFuture().sync();
         } finally {
             //8.关闭EventLoopGroup,释放所有的资源
@@ -51,6 +55,6 @@ public class EchoServer {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new EchoServer(8080).start();
+        new EchoServer(9454).start();
     }
 }
