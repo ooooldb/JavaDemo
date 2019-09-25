@@ -7,7 +7,7 @@ package com.xiayu.JavaDemo.xiayu.java.datastructure_algorithm.algorithm;
 public class BinarySearch {
     /*
         1. high=arr.length 错误 high应为arr.length-1;索引可达的最大值
-        2. while (index < low || index > high) 直接不循环跳出
+        2. while (user < low || user > high) 直接不循环跳出
      */
     public static int rank(int key, int[] arr) {
         int high = arr.length-1;

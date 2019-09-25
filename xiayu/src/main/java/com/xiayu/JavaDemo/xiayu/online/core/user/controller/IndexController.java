@@ -1,4 +1,4 @@
-package com.xiayu.JavaDemo.xiayu.online.core.index.controller;
+package com.xiayu.JavaDemo.xiayu.online.core.user.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("xiayu")
 public class IndexController {
 
-    @GetMapping("index")
+    @GetMapping("user")
     public String index() {
-        return "xiayu's index";
+        return "xiayu's user";
     }
 }
