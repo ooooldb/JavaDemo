@@ -5,7 +5,10 @@ package com.xiayu.java.java.algorithms.sort;
  * @date: 2019/9/17
  */
 public class ChoiceSort {
-
+    /*
+        选择排序
+            不断的选择未排序部分的极值,放到数组的一边作为已排序的部分.
+     */
     public static void sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int min = i;
