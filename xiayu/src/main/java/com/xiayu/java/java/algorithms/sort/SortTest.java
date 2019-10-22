@@ -77,6 +77,48 @@ public class SortTest {
     }
 
     @Test
+    public void mergeSortTest() {
+        int[] arr = getRandomArr(999999);
+        long first = System.currentTimeMillis();
+        MergeSort.sort(arr);
+        long now = System.currentTimeMillis() - first;
+        System.out.println("耗时:" + now + "ms");
+        if (checkSort(arr)) {
+            System.out.println("数组有序");
+        } else {
+            System.out.println("数组无序");
+        }
+    }
+
+    @Test
+    public void mergeSortTest2() {
+        int[] arr = getRandomArr(999999);
+        long first = System.currentTimeMillis();
+        MergeSort.mergeSort(arr);
+        long now = System.currentTimeMillis() - first;
+        System.out.println("耗时:" + now + "ms");
+        if (checkSort(arr)) {
+            System.out.println("数组有序");
+        } else {
+            System.out.println("数组无序");
+        }
+    }
+
+    @Test
+    public void heapSortTest() {
+        int[] arr = getRandomArr(999999);
+        long first = System.currentTimeMillis();
+        HeapSort.sort(arr);
+        long now = System.currentTimeMillis() - first;
+        System.out.println("耗时:" + now + "ms");
+        if (checkSort(arr)) {
+            System.out.println("数组有序");
+        } else {
+            System.out.println("数组无序");
+        }
+    }
+
+    @Test
     public void test27() {
         int[] arr = {3,2,2,3};
         Solution.removeElement(arr, 3);
@@ -87,7 +129,7 @@ public class SortTest {
         int[] arr = new int[length];
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt();
+            arr[i] = random.nextInt(99999);
         }
         return arr;
     }
