@@ -744,7 +744,7 @@
                     return results;
                 }
 
-                // Try to shortcut find operations (as opposed to filters) in HTML documents
+                // Try to shortcut search operations (as opposed to filters) in HTML documents
                 if (!seed) {
 
                     if ((context ? context.ownerDocument || context : preferredDoc) !== document) {
@@ -1150,7 +1150,7 @@
                     return !document.getElementsByName || !document.getElementsByName(expando).length;
                 });
 
-                // ID filter and find
+                // ID filter and search
                 if (support.getById) {
                     Expr.filter["ID"] = function (id) {
                         var attrId = id.replace(runescape, funescape);
@@ -1175,7 +1175,7 @@
                     };
 
                     // Support: IE 6 - 7 only
-                    // getElementById is not reliable as a find shortcut
+                    // getElementById is not reliable as a search shortcut
                     Expr.find["ID"] = function (id, context) {
                         if (typeof context.getElementById !== "undefined" && documentIsHTML) {
                             var node, i, elems,
@@ -3008,7 +3008,7 @@
                     return (context || root).find(selector);
 
                     // HANDLE: $(expr, context)
-                    // (which is just equivalent to: $(context).find(expr)
+                    // (which is just equivalent to: $(context).search(expr)
                 } else {
                     return this.constructor(context).find(selector);
                 }
@@ -5020,7 +5020,7 @@
                 jQuery.find.matchesSelector(documentElement, selector);
             }
 
-            // Make sure that the handler has a unique ID, used to find/remove it later
+            // Make sure that the handler has a unique ID, used to search/remove it later
             if (!handler.guid) {
                 handler.guid = jQuery.guid++;
             }

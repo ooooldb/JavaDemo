@@ -21,17 +21,6 @@ public class ExecutorDemo {
     }
 
     @Test
-    public void newCachedThreadPoolDemo() {
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.execute(new Thread(() -> {
-
-        })
-
-
-        );
-    }
-
-    @Test
     public void newFixedThreadPoolDemo() {
         //ExecutorService executorService = Executors.newFixedThreadPool(1);
         ExecutorService executorService = Executors.newFixedThreadPool(2);
@@ -85,15 +74,12 @@ public class ExecutorDemo {
             }
         }
         );
-        executorService.execute(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        System.out.println("t5开始运行");
-                                        for (int i = 0; i < 10000; i++) {
-                                            System.out.println("5---" + i);
-                                        }
-                                    }
-                                }
+        executorService.execute(() -> {
+            System.out.println("t5开始运行");
+            for (int i = 0; i < 10000; i++) {
+                System.out.println("5---" + i);
+            }
+        }
         );
         for (int i = 0; i < 1000000; i++) {
             System.out.print("");
