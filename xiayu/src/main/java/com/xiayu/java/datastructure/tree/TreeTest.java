@@ -35,8 +35,7 @@ public class TreeTest {
     }
     @Test
     public void test2() {
-        new Demo().print();
-
+        /*new Demo().print();*/
     }
 
 }
