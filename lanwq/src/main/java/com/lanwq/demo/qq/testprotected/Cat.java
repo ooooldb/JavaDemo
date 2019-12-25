@@ -1,6 +1,7 @@
 package com.lanwq.demo.qq.testprotected;
 
-import demo.sixthaccesscontrol.Animal;
+
+import com.lanwq.demo.qq.sixthaccesscontrol.Animal;
 
 /**
  * @program: ThinkingInJavaDemo -->Cat
