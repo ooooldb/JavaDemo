@@ -27,7 +27,7 @@
         <commons-lang.version>2.6</commons-lang.version>
         <quartz.version>2.2.3</quartz.version>
         <netty.version>4.1.42.Final</netty.version>
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.7.0</shiro.version>
         <lombok.version>1.18.8</lombok.version>
         <fastjson.version>1.2.61</fastjson.version>
     </properties>
